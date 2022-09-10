@@ -1,0 +1,16 @@
+﻿@model IEnumerable<EcommerceSystem.Models.ShopingCart>
+@if(Model.Count()>0)
+{
+   int totalcount = @Model.Select(p => p.Quantity).Sum();
+   <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="ShoppingCart"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      @Html.Raw("(")
+      @totalcount
+      @Html.Raw(")")
+      </a>
+}
+else
+{
+ <a class="nav-link text-dark" asp-area="Customer" asp-controller="ShoppingCart" asp-action="ShoppingCart">
+                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                              
+                               </a>}
